@@ -19,7 +19,22 @@ router = APIRouter(
     summary="Register a User"
 )
 def auth_signup():
-    pass
+    """
+    Signup
+
+    This path operation register a user in the app
+
+    Parameters:
+        - Request body parameter
+            -user : UserRegister
+    
+    Return a json with the badic user information:
+        - user_id: UUID
+        - email: EmailStr
+        - first_name: str
+        - last_name: str
+        - birth_date: date
+    """
 
 ### Login a user
 @router.post(

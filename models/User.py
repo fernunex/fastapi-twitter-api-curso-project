@@ -26,6 +26,7 @@ class UserLogin(UserBase):
         )
 
 class User(UserBase):
+
     first_name: str = Field(
         ...,
         min_length=1,
@@ -39,3 +40,6 @@ class User(UserBase):
     birth_date: Optional[date] = Field(
         default=None
         )
+
+class UserRegister(User, UserLogin):
+    pass
