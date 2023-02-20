@@ -1,1 +1,15 @@
-[]
+[
+    {
+        "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "content": "New new new new",
+        "created_at": "2023-02-17 22:23:10.458533",
+        "updated_at": "2023-02-18 04:30:07.789000+00:00",
+        "by": {
+            "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "email": "EEE@example.com",
+            "first_name": "ssss",
+            "last_name": "sssssss",
+            "birth_date": "2023-02-18"
+        }
+    }
+]
