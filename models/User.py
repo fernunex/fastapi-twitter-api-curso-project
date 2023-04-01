@@ -19,6 +19,7 @@ class UserBase(BaseModel):
         )    
 
 class UserLogin(UserBase):
+    user_id: Optional[UUID] = Field()
     password: str = Field(
         ...,
         min_length=8,
@@ -43,3 +44,10 @@ class User(UserBase):
 
 class UserRegister(User, UserLogin):
     pass
+
+class UserLoggedStatus(UserBase):
+    user_id: Optional[UUID] = Field()
+    status_message: str = Field(
+        ...,
+        min_length=5,
+        max_length=50)

@@ -5,7 +5,7 @@ import json
 from fastapi import APIRouter, status, Body
 
 # Models
-from models import User, UserRegister
+from models import User, UserRegister, UserLogin, UserLoggedStatus
 
 router = APIRouter(
     prefix='/auth',
@@ -53,9 +53,38 @@ def auth_signup(user: UserRegister = Body(...)):
 ### Login a user
 @router.post(
     path="/login",
-    response_model=User,
+    response_model=UserLoggedStatus,
     status_code=status.HTTP_200_OK,
     summary="Login a User"
 )
-def auth_login():
-    pass
+def auth_login(user: UserLogin = Body(...)):
+        """
+    Log in
+
+    This path operation log in a user in the app
+    * But we are not using Authentication, just checking that
+    the user password and email exist.
+
+    Parameters:
+        - Request body parameter
+            -user : UserLogin
+    
+    Return a json with the UserLoggedStatus information:
+        - user_id: Optional[UUID]
+        - email: EmailStr
+        - status_message: str
+    """
+        with open("users.json", "r", encoding="utf-8") as f:
+            results = json.loads(f.read()) # list of dicts
+            user = user.dict()
+
+            for user_db in results:
+                if user_db['email'] == user['email'] and user_db['password'] == user['password']:
+                    return UserLoggedStatus(
+                        user_id= user_db['user_id'],
+                        email = user_db['email'],
+                        status_message= "Successfully logged in")
+        
+        return UserLoggedStatus(
+                    email = user['email'], 
+                    status_message= "Unsuccessfully logged in")

@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa0",
+        "email": "fer@example.com",
+        "password": "feradmin1234",
+        "first_name": "Fernando",
+        "last_name": "Nunez",
+        "birth_date": "2001-03-25"
+    },
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "Jose@java.com",
+        "password": "esta855Fuerta",
+        "first_name": "Jose",
+        "last_name": "Macias",
+        "birth_date": "2023-03-25"
+    },
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa1",
+        "email": "nada@nada.com",
+        "password": "nada1234",
+        "first_name": "Don nadie",
+        "last_name": "Nadie",
+        "birth_date": "2023-04-01"
+    }
+]
