@@ -2,10 +2,10 @@
 import json
 
 # FastAPI
-from fastapi import APIRouter, status, Body
+from fastapi import APIRouter, status, Body, HTTPException
 
 # Models
-from models import User, UserRegister, UserLogin, UserLoggedStatus
+from models import User, UserRegister, UserLogin
 
 router = APIRouter(
     prefix='/auth',
@@ -53,7 +53,7 @@ def auth_signup(user: UserRegister = Body(...)):
 ### Login a user
 @router.post(
     path="/login",
-    response_model=UserLoggedStatus,
+    response_model=User,
     status_code=status.HTTP_200_OK,
     summary="Login a User"
 )
@@ -69,10 +69,12 @@ def auth_login(user: UserLogin = Body(...)):
         - Request body parameter
             -user : UserLogin
     
-    Return a json with the UserLoggedStatus information:
-        - user_id: Optional[UUID]
+    Return a json with the basic user information:
+        - user_id: UUID
         - email: EmailStr
-        - status_message: str
+        - first_name: str
+        - last_name: str
+        - birth_date: date
     """
         with open("users.json", "r", encoding="utf-8") as f:
             results = json.loads(f.read()) # list of dicts
@@ -80,11 +82,9 @@ def auth_login(user: UserLogin = Body(...)):
 
             for user_db in results:
                 if user_db['email'] == user['email'] and user_db['password'] == user['password']:
-                    return UserLoggedStatus(
-                        user_id= user_db['user_id'],
-                        email = user_db['email'],
-                        status_message= "Successfully logged in")
-        
-        return UserLoggedStatus(
-                    email = user['email'], 
-                    status_message= "Unsuccessfully logged in")
+                    return user_db
+            
+            raise HTTPException(
+                status_code= status.HTTP_404_NOT_FOUND,
+                detail="Password or email not valid"
+            )
