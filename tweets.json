@@ -1,15 +1,1 @@
-[
-    {
-        "tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "content": "New new new new",
-        "created_at": "2023-02-17 22:23:10.458533",
-        "updated_at": "2023-02-18 04:30:07.789000+00:00",
-        "by": {
-            "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "email": "EEE@example.com",
-            "first_name": "ssss",
-            "last_name": "sssssss",
-            "birth_date": "2023-02-18"
-        }
-    }
-]
+[{"tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa2", "content": "Saludos desde HAWAI bamdona", "created_at": "2023-04-01 16:39:52.146749", "updated_at": "2023-04-01 22:40:42.776000+00:00", "by": {"user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "email": "nostra@gmail.com", "first_name": "Francisco", "last_name": "Perez", "birth_date": "2023-04-01"}}, {"tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa1", "content": "Este tweet es para dejar en claro que estoy muy molesto sobre blablabla", "created_at": "2023-04-01 16:39:52.146749", "updated_at": "2023-04-01 22:40:42.776000+00:00", "by": {"user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "email": "fer@fer.com", "first_name": "Fernando", "last_name": "Nunez", "birth_date": "2023-04-01"}}, {"tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa0", "content": "Este texto ya lo modifique usando la api", "created_at": "2023-04-04 15:39:14.711286", "updated_at": "2023-04-04 16:13:26.937749", "by": {"user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "email": "user@example.com", "first_name": "string", "last_name": "string", "birth_date": "2023-04-04"}}, {"tweet_id": "3fa85f64-5717-4562-b3fc-2c963f66afa9", "content": "Final de todo", "created_at": "2023-04-04 15:39:14.711286", "updated_at": "2023-04-04 21:55:45.708000+00:00", "by": {"user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "email": "user@example.com", "first_name": "string", "last_name": "string", "birth_date": "2023-04-04"}}]
